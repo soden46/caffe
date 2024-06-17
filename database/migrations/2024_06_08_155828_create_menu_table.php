@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->decimal('harga', 8, 2)->default(0);
             $table->decimal('harga_lama', 8, 2)->default(0);
-            $table->boolean('populer')->default(0);
+            $table->boolean('promo')->default(0);
             $table->string('foto');
             $table->unsignedBigInteger('id_kategori');
             $table->timestamps();

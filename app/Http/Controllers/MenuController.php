@@ -30,7 +30,7 @@ class MenuController extends Controller
                 'cats' => Kategori::all(),
                 'catsCount' => Kategori::count(),
                 'MenusCount' => Menu::count(),
-                'POPULARMenusCount' => Menu::where('populer', 1)->count(),
+                'PROMOMenusCount' => Menu::where('promo', 1)->count(),
                 'Earning' => Transaksi::sum('total'),
             ]);
         } else {
@@ -39,7 +39,7 @@ class MenuController extends Controller
                 'cats' => Kategori::all(),
                 'catsCount' => Kategori::count(),
                 'MenusCount' => Menu::count(),
-                'POPULARMenusCount' => Menu::where('populer', 1)->count(),
+                'PROMOMenusCount' => Menu::where('promo', 1)->count(),
                 'Earning' => Transaksi::sum('total'),
             ]);
         }
@@ -54,25 +54,25 @@ class MenuController extends Controller
             'cats' => Kategori::all(),
             'catsCount' => Kategori::count(),
             'MenusCount' => Menu::count(),
-            'POPULARMenusCount' => Menu::where('populer', 1)->count(),
+            'PromoMenusCount' => Menu::where('promo', 1)->count(),
             'Earning' => Transaksi::sum('total'),
         ]);
     }
-    public function POPULAR($id)
+    public function PROMO($id)
     {
         $menu = Menu::where('id', $id)->first();
-        $menu->populer = 1;
+        $menu->promo = 1;
         $menu->save();
-        return redirect()->route('Menu.index')->with(['success' => 'Menu Added to POPULAR Menus ']);
+        return redirect()->route('Menu.index')->with(['success' => 'Menu Added to PROMO Menus ']);
         # code...
     }
-    // function bach kanhyd menu mn POPULAR
-    public function NONPOPULAR($id)
+
+    public function NONPROMO($id)
     {
         $menu = Menu::where('id', $id)->first();
-        $menu->populer = 0;
+        $menu->promo = 0;
         $menu->save();
-        return redirect()->route('Menu.index')->with(['success' => 'Menu Removed From POPULAR Menus ']);
+        return redirect()->route('Menu.index')->with(['success' => 'Menu Removed From PROMO Menus ']);
     }
     /**
      * Show the form for creating a new resource.

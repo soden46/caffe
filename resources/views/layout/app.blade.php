@@ -28,7 +28,9 @@
     {{-- navbar --}}
     <header>
 
-       <a href="/" class="logo"><i class="fas fa-utensils"></i> Osaka Billiard Yogyakarta</a>
+       <a href="/" class="logo">
+        <img src="{{ asset('images/logo.jpg')}}" style="width: 30px; height: 30px;"> Osaka Billiard Yogyakarta
+    </a>
 
         <nav class="navbar">
             <a href="/" class="active">home</a>
@@ -78,7 +80,7 @@
 
 
      <!-- footer section start --->
-     <section class="footer">
+     <!--<section class="footer">
          <div class="box-container">
              <div class="box">
                  <h3>locations</h3>
@@ -113,7 +115,7 @@
             </div>
          </div>
          <div class="credit">copyright <i class="fa-solid fa-copyright"></i> 2022 by <span>ABDERRAHMANE AMERRHI</span></div>
-     </section>
+     </section>--->
 
      <!-- foter section end -->
 

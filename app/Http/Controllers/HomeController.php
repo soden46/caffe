@@ -16,7 +16,7 @@ class HomeController extends Controller
 
         return view('index')->with([
             'menu' => Menu::all(),
-            'populer' =>  Menu::where('populer', 1)->get(),
+            'promo' =>  Menu::where('promo', 1)->get(),
             'reviews' => Komen::all(),
         ]);
     }

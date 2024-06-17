@@ -22,8 +22,8 @@
 <div class="CardBox">
     <div class="Card">
         <div>
-            <div class="numbers">{{$POPULARMenusCount}}</div>
-            <div class="CardName">Menu Populer</div>
+            <div class="numbers">{{$PromoMenusCount}}</div>
+            <div class="CardName">Menu Promo</div>
         </div>
         <div class="iconBox">
             <ion-icon name="star"></ion-icon>

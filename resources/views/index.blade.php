@@ -53,28 +53,28 @@
 
 <!--- Home Section End --->
 
-@if ($populer !== 0)
+@if ($promo !== 0)
 <!-- Dish section Strat  --->
 <section class="dishes" id="dishes">
-    <h3 class="sub-heading">Menu Disukai</h3>
-    <h1 class="heading">Menu Populer</h1>
+    <h3 class="sub-heading">Promo</h3>
+    <h1 class="heading">Promo Bulan Ini</h1>
     <div class="box-container">
-        @foreach ($populer as $menuPopuler)
+        @foreach ($promo as $menuPromo)
         <div class="box">
-            <form action="{{route('populer.store')}}" method="POST">
+            <form action="{{route('promo.store')}}" method="POST">
                 @csrf
                 @if (auth()->user())
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
-                <input type="hidden" name="menu_id" value="{{$menuPopuler->id}}">
+                <input type="hidden" name="menu_id" value="{{$menuPromo->id}}">
                 @endif
                 <button type="submit"> <i class="fas fa-heart"></i></button>
                 {{--<a href="#" class="fas fa-eye"></a>--}}
             </form>
-            <img src="{{asset('images/menu/'.$menuPopuler->foto)}}" alt="">
-            <h3>{{$menuPopuler->judul}}</h3>
+            <img src="{{asset('images/menu/'.$menuPromo->foto)}}" alt="">
+            <h3>{{$menuPromo->judul}}</h3>
 
-            <span>RP {{$menuPopuler->harga}}</span>
-            <form action="{{route('cart.add',$menuPopuler->id)}}" method="POST">
+            <span>RP {{$menuPromo->harga}}</span>
+            <form action="{{route('cart.add',$menuPromo->id)}}" method="POST">
 
                 <input type="hidden" name="quantity" value="1">
                 @csrf
@@ -143,7 +143,7 @@
         <div class="box">
             <div class="image">
                 <img src="{{asset('images/menu/'.$menu->foto)}}" alt="">
-                <form action="{{route('populer.store')}}" method="POST">
+                <form action="{{route('promo.store')}}" method="POST">
                     @csrf
                     @if (auth()->user())
                     <input type="hidden" name="id_user" value="{{auth()->user()->id}}">
@@ -163,7 +163,7 @@
                     {{-- nsift qte =1 f index  cart --}}
                     <input type="hidden" name="quantity" value="1">
                     @csrf
-                    <button type="submit" class="btn">add to cart</button>
+                    <button type="submit" class="btn">tambah ke keranjang</button>
                 </form>
 
             </div>

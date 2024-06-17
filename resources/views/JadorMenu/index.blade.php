@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="price">Price : {{$item->Menu->pric}} MAD</td>
+                        <td class="price">Price : {{$item->Menu->pric}} IDR</td>
 
 
                     </tr>
