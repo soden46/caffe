@@ -18,25 +18,22 @@ class AdminSeeder extends Seeder
     public function run()
     {
         //
-        User::create(
-            [
+        User::create([
 
-                'nama' => 'admin',
-                'email' => 'admin@admin.com',
-                'role' => 'admin',
-                'email_verified_at' => now(),
-                'password' => Hash::make("admin"), // password
-                'remember_token' => Str::random(10),
-            ],
-            [
-
-                'nama' => 'user',
-                'email' => 'user@user.com',
-                'role' => 'user',
-                'email_verified_at' => now(),
-                'password' => Hash::make("user"), // password
-                'remember_token' => Str::random(10),
-            ]
-        );
+            'nama' => 'admin',
+            'email' => 'admin@admin.com',
+            'role' => 'admin',
+            'email_verified_at' => now(),
+            'password' => Hash::make("admin"), // password
+            'remember_token' => Str::random(10),
+        ]);
+        User::create([
+            'nama' => 'user',
+            'email' => 'user@user.com',
+            'role' => 'user',
+            'email_verified_at' => now(),
+            'password' => Hash::make("user"), // password
+            'remember_token' => Str::random(10),
+        ]);
     }
 }

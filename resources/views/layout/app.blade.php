@@ -28,7 +28,7 @@
     {{-- navbar --}}
     <header>
 
-       <a href="/" class="logo"><i class="fas fa-utensils"></i>RESTOTAMRI</a>
+       <a href="/" class="logo"><i class="fas fa-utensils"></i> Osaka Billiard Yogyakarta</a>
 
         <nav class="navbar">
             <a href="/" class="active">home</a>

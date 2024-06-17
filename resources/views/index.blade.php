@@ -10,41 +10,37 @@
         <div class="swiper-wrapper wrapper">
             <div class="swiper-slide slide">
                 <div class="content">
-                    <span>our royalty dishes</span>
-                    <h3>Couscous</h3>
-                    <p>The varied Moroccan traditional food that we offer many of this dish, such as couscous with meat or chicken and various vegetables, as well as couscous with fish.</p>
+                   <span>Menu Paket Kami</span>
+                    <h3>Paket Siang A</h3>
+                    <p>2 Jam + 1 Softdrink Rp. 40.000</p>
                     <a href="#" class="btn">order now</a>
                 </div>
                 <div class="image">
-                    <img src="{{asset('images/backgrounds/CouscoBack.png')}}" alt="">
+                    <img src="{{asset('images/osaka.jpg')}}" alt="" >
                 </div>
             </div>
 
             <div class="swiper-slide slide">
                 <div class="content">
-                    <span>our royalty dishes</span>
-                    <h3>Bastilla</h3>
-                    <p>Bastila is one of the most traditional Moroccan dishes that are prepared in most Moroccan proportions and we offer you this unique dish in a variety of different forms.</p>
+                    <span>Menu Paket Kami</span>
+                    <h3>Paket Siang B</h3>
+                    <p>3 Jam + 2 Softdrink Rp. 60.000</p>
                     <a href="#" class="btn">order now</a>
                 </div>
                 <div class="image">
-                    <img src="{{asset('images/backgrounds/bstillabacknew.png')}}" alt="">
+                    <img src="{{asset('images/osaka.jpg')}}" alt="" >
                 </div>
             </div>
 
             <div class="swiper-slide slide">
                 <div class="content">
-                    <span>our royalty dishes</span>
-                    <h3>Fish</h3>
-                    <p>We offer the most delicious various marine dishes such as tagine with fish,
-                        a traditional Moroccan dish, fried fish such as sardines and seafood,
-                        which are served in various forms,
-                        and the unique Spanish paella dish, We also offer the most delicious grilled fish
-                        .</p>
+                    <span>Menu Paket Kami</span>
+                    <h3>Paket Malam A</h3>
+                    <p>2 Jam + 1 Softdrink Rp. 65.000</p>
                     <a href="#" class="btn">order now</a>
                 </div>
                 <div class="image">
-                    <img src="{{asset('images/backgrounds/fishback.png')}}" alt="">
+                    <img src="{{asset('images/osaka.jpg')}}" alt="" >
                 </div>
             </div>
         </div>
@@ -95,11 +91,11 @@
 
 <!-- About Section Start -->
 <section class="about" id="about">
-    <h3 class="sub-heading">about us</h3>
-    <h1 class="heading">why choose us?</h1>
+    <h3 class="sub-heading">Tentang Kami</h3>
+    <h1 class="heading">Kenapa Memilih Kami?</h1>
     <div class="row">
         <div class="image">
-            <img src="{{asset('images/backgrounds/aboutbackk.png')}}" alt="">
+            <img src="{{asset('images/osaka.jpg')}}" alt="" >
         </div>
         <div class="content">
             <h3>Best Food In The kingdom</h3>
@@ -183,8 +179,8 @@
 <!-- review section start -->
 @if ($reviews->count())
 <section class="review" id="review">
-    <h3 class="sub-heading">customer's review</h3>
-    <h1 class="heading">what they say</h1>
+    <h3 class="sub-heading">Penilaian Pelanggan</h3>
+    <h1 class="heading"></h1>
     <div class="swiper-container review-slider ">
         <div class="swiper-wrapper">
 
@@ -226,13 +222,13 @@
 
 <!-- Ordre Section start -->
 <div class="review2" id="review2">
-    <h3 class="sub-heading">review</h3>
-    <h1 class="heading">Add your review about our services</h1>
+    <h3 class="sub-heading">Penilaian</h3>
+    <h1 class="heading">Tambah Penilaian Anda</h1>
     <form action="{{route('reviews.store')}}" method="POST">
         @csrf
         <div class="inputBox">
             <div class="input">
-                <span>your review</span>
+                <span>Penilaian Anda</span>
                 <textarea name="comment" placeholder="entre your review" id="" cols="30" rows="10"></textarea>
             </div>
         </div>
