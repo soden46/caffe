@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\JadorMenuController;
+use App\Http\Controllers\MenuPilihanController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaypalPaymentController;
 
@@ -61,9 +62,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('Menu', MenuController::class);
     // search menu route
     Route::post('/menus', [MenuController::class, 'index'])->name('menus.search');
-    // PROMO
-    Route::put('PROMO/{id}/Menu', [MenuController::class, 'PROMO'])->name('menu.promo');
-    Route::put('NOTPROMO/{id}/Menu', [MenuController::class, 'NONPROMO'])->name('menu.NONpromo');
+    // POPULAR
+    Route::put('POPULAR/{id}/Menu', [MenuController::class, 'POPULAR'])->name('menu.popular');
+    Route::put('NOTPOPULAR/{id}/Menu', [MenuController::class, 'NONPOPULAR'])->name('menu.NONpopular');
     // get menu by category route
     Route::get('CatMenu/{id}', [MenuController::class, 'getMenuByCategory'])->name('category.menus');
 
@@ -101,7 +102,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     // jador menus resources route
-    Route::resource('Jador',   JadorMenuController::class);
+    Route::resource('pilihan',   MenuPilihanController::class);
 
     // cart routes
     Route::get('/Cart', [CartController::class, 'index'])->name('cart.index');

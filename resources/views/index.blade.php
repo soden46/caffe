@@ -57,11 +57,11 @@
 <!-- Dish section Strat  --->
 <section class="dishes" id="dishes">
     <h3 class="sub-heading">Promo</h3>
-    <h1 class="heading">Promo Bulan Ini</h1>
+    <h1 class="heading">Menu Promo</h1>
     <div class="box-container">
-        @foreach ($promo as $menuPromo)
+        @foreach ($promo as $menupromo)
         <div class="box">
-            <form action="{{route('promo.store')}}" method="POST">
+            <form action="{{route('pilihan.store')}}" method="POST">
                 @csrf
                 @if (auth()->user())
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
@@ -143,7 +143,7 @@
         <div class="box">
             <div class="image">
                 <img src="{{asset('images/menu/'.$menu->foto)}}" alt="">
-                <form action="{{route('promo.store')}}" method="POST">
+                <form action="{{route('pilihan.store')}}" method="POST">
                     @csrf
                     @if (auth()->user())
                     <input type="hidden" name="id_user" value="{{auth()->user()->id}}">
@@ -163,7 +163,7 @@
                     {{-- nsift qte =1 f index  cart --}}
                     <input type="hidden" name="quantity" value="1">
                     @csrf
-                    <button type="submit" class="btn">tambah ke keranjang</button>
+                    <button type="submit" class="btn">add to cart</button>
                 </form>
 
             </div>

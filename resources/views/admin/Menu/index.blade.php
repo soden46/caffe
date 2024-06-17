@@ -22,7 +22,7 @@
 <div class="CardBox">
     <div class="Card">
         <div>
-            <div class="numbers">{{$PromoMenusCount}}</div>
+            <div class="numbers">{{$PROMOMenusCount}}</div>
             <div class="CardName">Menu Promo</div>
         </div>
         <div class="iconBox">
@@ -40,7 +40,7 @@
     </div>
     <div class="Card">
         <div>
-            <div class="numbers">{{$catsCount}}</div>
+            <div class="numbers">{{$kategoriCount}}</div>
             <div class="CardName">Kategori</div>
         </div>
         <div class="iconBox"><ion-icon name="albums"></ion-icon></div>
@@ -98,8 +98,8 @@
                                             <td>{{$menu->id}}</td>
                                             <td>{{$menu->judul}}</td>
                                             <td>{{Str::limit($menu->deskripsi,10)}}</td>
-                                            <td>Rp {{$menu->harga}}</td>
-                                            <td>Rp {{$menu->harga_lama}}</td>
+                                            <td>Rp {{ number_format($menu->harga, 0, ',', '.') }}</td>
+                                            <td>Rp {{ number_format($menu->harga_lama, 0, ',', '.') }}</td>
                                             <td>
                                                 <img src="{{asset('images//menu/'.$menu->foto)}}" alt="menu_image" class="img-fluid rounded-circle" width="70" height="70">
                                             </td>
@@ -134,16 +134,16 @@
                                                         <i class="fa fa-trash"></i>
                                                     </button>
                                                 </form>
-                                                @if ($menu->POPULAR === 0)
-                                                <form action="{{route("menu.popular",$menu->id)}}" method="post" style="margin-left: 4px !important">
+                                                @if ($menu->promo === 0)
+                                                <form action="{{route("menu.promo",$menu->id)}}" method="post" style="margin-left: 4px !important">
                                                     @csrf
                                                     @method('PUT')
-                                                    <button class="btn btn-pr btn-sm" type="submit" title="this Menu POPULAR">
+                                                    <button class="btn btn-pr btn-sm" type="submit" title="Ini Menu Promo">
                                                         <i class="fa-solid fa-fire text-white"></i>
                                                     </button>
                                                 </form>
                                                 @else
-                                                <form action="{{route("menu.NONpopular",$menu->id)}}" method="post" style="margin-left: 4px !important">
+                                                <form action="{{route("menu.NONpromo",$menu->id)}}" method="post" style="margin-left: 4px !important">
                                                     @csrf
                                                     @method('PUT')
                                                     <button class="btn btn-secondary btn-sm" type="submit" title="This Menu is no longer POPULAR">
@@ -171,11 +171,11 @@
                         {{-- Category  --}}
                         <div class="menu-category">
                             <div class="cartHeader">
-                                <h2>Kategori <span class="fw-light fs-6">(menu by category)</span></h2>
+                                <h2>Kategori <span class="fw-light fs-6">(menu berdasarkan kategori)</span></h2>
                             </div>
 
                             <table>
-                                @foreach ($cats as $cat)
+                                @foreach ($kategori as $cat)
                                 <tr>
                                     <td><a href="{{route('category.menus',$cat->id)}}">{{$cat->judul }}</a></td>
                                 </tr>

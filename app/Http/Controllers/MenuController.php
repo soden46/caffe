@@ -27,8 +27,8 @@ class MenuController extends Controller
         if (!empty($request->search)) {
             return view('admin.Menu.index')->with([
                 'menus' => Menu::where('judul', 'like', "%{$request->search}%")->orWhere('id', 'like', "%{$request->search}%")->orWhere('deskripsi', 'like', "%{$request->search}%")->paginate(6),
-                'cats' => Kategori::all(),
-                'catsCount' => Kategori::count(),
+                'kategori' => Kategori::all(),
+                'kategoriCount' => Kategori::count(),
                 'MenusCount' => Menu::count(),
                 'PROMOMenusCount' => Menu::where('promo', 1)->count(),
                 'Earning' => Transaksi::sum('total'),
@@ -36,8 +36,8 @@ class MenuController extends Controller
         } else {
             return view('admin.Menu.index')->with([
                 'menus' => Menu::latest()->paginate(6),
-                'cats' => Kategori::all(),
-                'catsCount' => Kategori::count(),
+                'kategori' => Kategori::all(),
+                'kategoriCount' => Kategori::count(),
                 'MenusCount' => Menu::count(),
                 'PROMOMenusCount' => Menu::where('promo', 1)->count(),
                 'Earning' => Transaksi::sum('total'),
@@ -51,8 +51,8 @@ class MenuController extends Controller
         $category = Kategori::where('id', $id)->first();
         return view('admin.Menu.index')->with([
             'menus' => $category->Menus()->latest()->paginate(6),
-            'cats' => Kategori::all(),
-            'catsCount' => Kategori::count(),
+            'kategori' => Kategori::all(),
+            'kategoriCount' => Kategori::count(),
             'MenusCount' => Menu::count(),
             'PromoMenusCount' => Menu::where('promo', 1)->count(),
             'Earning' => Transaksi::sum('total'),
@@ -83,7 +83,7 @@ class MenuController extends Controller
     {
         //
 
-        return view('admin.Menu.create')->with(['cats' => Kategori::all()]);
+        return view('admin.Menu.create')->with(['kategori' => Kategori::all()]);
     }
 
     /**
@@ -150,7 +150,7 @@ class MenuController extends Controller
         $menu = Menu::where('id', $id)->first();
         return view('admin.Menu.edit')->with([
             'menu' => $menu,
-            "cats" => Kategori::all(),
+            "kategori" => Kategori::all(),
         ]);
     }
 
@@ -172,7 +172,7 @@ class MenuController extends Controller
             'harga' => 'numeric|Nullable',
             'harga_lama' => 'numeric|Nullable',
             'foto' => 'image|mimes:png,jpg,jpeg|max:7000',
-            'id_kategori' => 'required|numeric',
+            'id_kategori' => 'required',
         ]);
         if ($request->has('foto')) {
             $image_path = public_path("images/menu/" . $menu->foto);

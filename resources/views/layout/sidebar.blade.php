@@ -29,8 +29,11 @@
         <ul>
             <li>
                 <a href="#">
-                    <span class="icon"><ion-icon name="restaurant"></ion-icon></span>
-                    <span class="title">Nama Caffe</span>
+                    <span class="icon">
+                    <img src="{{ asset('images/logo.jpg') }}" alt="Logo" style="width: 24px; height: 24px;">
+                    Osaka Billiard Yogyakarta
+                    </span>
+                    
                 </a>
             </li>
             <li>

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\jadorMenu;
 use App\Http\Requests\StorejadorMenuRequest;
 use App\Http\Requests\UpdatejadorMenuRequest;
+use App\Models\MenuPilihan;
 
-class JadorMenuController extends Controller
+class MenuPilihanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class JadorMenuController extends Controller
     {
         //
         return view('JadorMenu.index')->with([
-            'MenuJadors' => jadorMenu::where('user_id', auth()->user()->id)->get(),
+            'MenuJadors' => MenuPilihan::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
@@ -42,12 +42,12 @@ class JadorMenuController extends Controller
 
 
         $request->validate([
-            'user_id' => 'required|numeric',
-            'menu_id' => 'required|numeric',
+            'id_user' => 'required|numeric',
+            'id_menu' => 'required|numeric',
         ]);
-        jadorMenu::create([
-            'user_id' => $request->user_id,
-            'menu_id' => $request->menu_id,
+        MenuPilihan::create([
+            'id_user' => $request->id_user,
+            'id_menu' => $request->id_menu,
 
         ]);
         return redirect()->route('resto.index')->with(['success' => 'The Menu has been added to favourites ']);
