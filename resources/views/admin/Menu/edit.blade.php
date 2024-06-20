@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="id_kategori" class="col-md-2 col-sm-3 form-label">Category</label>
-                                    <select class="form-select" name="categorie_id" aria-label="Default select example" id="id_kategori">
+                                    <select class="form-select" name="id_kategori" aria-label="Default select example" id="id_kategori">
                                         @foreach ($kategori as $cat)
                                            <option value="{{$cat->id}}" {{$menu->id_kategori == $cat->id ? 'selected' : ''}} >{{$cat->judul}}</option>
                                         @endforeach

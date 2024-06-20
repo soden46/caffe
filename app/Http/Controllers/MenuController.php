@@ -168,12 +168,12 @@ class MenuController extends Controller
 
         $menu = Menu::where('id', $id)->first();
         $request->validate([
-            'judul' => 'required|min:3|max:20',
-            'deskripsi' => 'required|min:5',
+            'judul' => 'nullable|min:3|max:20',
+            'deskripsi' => 'nullable|min:5',
             'harga' => 'numeric|Nullable',
             'harga_lama' => 'numeric|Nullable',
             'foto' => 'image|mimes:png,jpg,jpeg|max:7000',
-            'id_kategori' => 'required',
+            'id_kategori' => 'nullable',
         ]);
         if ($request->has('foto')) {
             $image_path = public_path("images/menu/" . $menu->foto);
