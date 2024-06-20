@@ -43,7 +43,7 @@
               <div class="icons">
                 <i class="fas fa-bars" id="menu-bars"></i>
                 {{---<i class="fas fa-search" id="search-icon"></i>--}}
-                <a href="{{route('Jador.index')}}" class="fas fa-heart"></a>
+                <a href="{{route('pilihan.index')}}" class="fas fa-heart"></a>
                 <a href="{{route('cart.index')}}" class="fas fa-shopping-cart"></a>
                 <a href="{{route('user.profile',auth()->user()->id)}}" class="user" id="auth-icon">
                      @if (auth()->user()->image !== 'image')
