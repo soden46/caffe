@@ -33,14 +33,14 @@
                                      <label for="price" class="col-md-2 col-sm-3 form-label">Pric </label>
                                     <div class="input-group ">
                                             <input type="text" class="form-control" name="pric" value="{{$menu->pric}}" id="price" aria-label="Dollar amount (with dot and two decimal places)">
-                                             <span class="input-group-text">MAD</span>
+                                             <span class="input-group-text">IDR</span>
                                     </div>
                                 </div>
                                 <div class="row input-group mb-3">
                                     <label for="old_price" class="col-md-2 col-sm-3 form-label">Old Price</label>
                                    <div class="input-group ">
                                         <input type="text" class="form-control" name="old_price" value="{{$menu->old_price}}" id="old_price" aria-label="Dollar amount (with dot and two decimal places)">
-                                        <span class="input-group-text">MAD</span>
+                                        <span class="input-group-text">IDR</span>
                                     </div>
 
                                 </div>
@@ -54,7 +54,7 @@
                                 <div class="mb-3">
                                     <label for="cats" class="col-md-2 col-sm-3 form-label">Category</label>
                                     <select class="form-select" name="categorie_id" aria-label="Default select example" id="cats">
-                                        @foreach ($cats as $cat)
+                                        @foreach ($kategori as $cat)
                                            <option value="{{$cat->id}}" {{$menu->categorie_id == $cat->id ? 'selected' : ''}} >{{$cat->title}}</option>
                                         @endforeach
                                     </select>

@@ -63,8 +63,8 @@ Route::group(['middleware' => 'auth'], function () {
     // search menu route
     Route::post('/menus', [MenuController::class, 'index'])->name('menus.search');
     // POPULAR
-    Route::put('PROMO/{id}/Menu', [MenuController::class, 'POPULAR'])->name('menu.promo');
-    Route::put('NOTPROMO/{id}/Menu', [MenuController::class, 'NONPOPULAR'])->name('menu.NONpromo');
+    Route::put('PROMO/{id}/Menu', [MenuController::class, 'PROMO'])->name('menu.promo');
+    Route::put('NOTPROMO/{id}/Menu', [MenuController::class, 'NONPROMO'])->name('menu.NONpromo');
     // get menu by category route
     Route::get('CatMenu/{id}', [MenuController::class, 'getMenuByCategory'])->name('category.menus');
 
