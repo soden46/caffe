@@ -87,6 +87,7 @@
                                             <td>Deskripsi</td>
                                             <td>Harga</td>
                                             <td>Harga Lama</td>
+                                            <td>Promo</td>
                                             <td>Foto</td>
                                             <td class="text-center">Action</td>
                                         </tr>
@@ -100,6 +101,7 @@
                                             <td>{{Str::limit($menu->deskripsi,10)}}</td>
                                             <td>Rp {{ number_format($menu->harga, 0, ',', '.') }}</td>
                                             <td>Rp {{ number_format($menu->harga_lama, 0, ',', '.') }}</td>
+                                             <td>{{$menu->promo == 1 ? 'Iya' : 'Tidak'}}</td>
                                             <td>
                                                 <img src="{{asset('images//menu/'.$menu->foto)}}" alt="menu_image" class="img-fluid rounded-circle" width="70" height="70">
                                             </td>
