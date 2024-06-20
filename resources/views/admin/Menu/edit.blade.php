@@ -16,7 +16,6 @@
                               <form action="{{route('Menu.update',$menu->id)}}" method="post" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
-                                {{$menu->judul}}
                                 <div class="row mb-3">
                                      <label for="judul" class="col-md-2 col-sm-3 form-label">Judu:</label>
                                      <input type="text"
@@ -59,6 +58,13 @@
                                            <option value="{{$cat->id}}" {{$menu->id_kategori == $cat->id ? 'selected' : ''}} >{{$cat->judul}}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="mb-3">
+                                        <label for="promo" class="col-md-2 col-sm-3 form-label">Promo</label>
+                                        <select class="form-select" name="promo" id="promo">
+                                            <option value="0" {{ $menu->promo == 0 ? 'selected' : '' }}>Tidak</option>
+                                            <option value="1" {{ $menu->promo == 1 ? 'selected' : '' }}>Iya</option>
+                                        </select>
                                 </div>
 
                                 <div class="mb-3">
