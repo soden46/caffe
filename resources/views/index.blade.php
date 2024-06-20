@@ -99,24 +99,13 @@
         </div>
         <div class="content">
             <h3>Osaka Billiard Dan Cafe Yogyakarta</h3>
-            <p>Osaka Billiard Dan Cafe Yogyakarta Adalah Tempat billiard berstandar internasional memiliki sejumlah ciri dan fasilitas yang membuatnya berbeda dari tempat billiard biasa. 
-- Meja Billiard Menggunakan meja billiard dengan ukuran standar internasional, Meja terbuat dari bahan berkualitas tinggi dengan permukaan yang rata dan bantalan yang sesuai untuk pantulan bola yang akurat.
-
-- Peralatan Bola billiard dan stick (cue) yang digunakan harus memenuhi standar internasional dalam hal ukuran, berat, dan bahan. Bola billiard  berkualitas tinggi yang memberikan ketahanan dan performa yang optimal.
-
-- Pencahayaan: Pencahayaan yang memadai dan seragam di seluruh meja untuk menghindari bayangan dan memastikan pemain dapat melihat bola dengan jelas. Lampu dipasang pada ketinggian tertentu untuk memberikan pencahayaan yang ideal.
-
-- Lantai dan Lingkungan, Lantai terbuat dari bahan yang tahan lama dan tidak licin, seperti karpet . Suasana ruangannya nyaman, dengan ventilasi yang baik dan suhu yang terkontrol.
-
-- Perawatan, Meja dan peralatan billiard harus dirawat secara rutin untuk menjaga kualitas dan performanya. Ini termasuk perawatan kain meja, pengecekan dan penggantian bantalan, serta pembersihan bola dan stick.
-
-- Fasilitas Tambahan, dilengkapi dengan fasilitas tambahan seperti bar atau kafe, ruang tunggu yang nyaman, toilet yang bersih.
-
-- Aksesibilitas, Lokasinya mudah diakses dengan fasilitas parkir yang memadai dan ramah.
-
-- Keamanan dan Kebersihan, Mengutamakan keamanan dan kebersihan dengan menyediakan loker untuk barang pribadi, pengawasan keamanan, dan pembersihan rutin.
-
-- Tempat billiard berstandar internasional ini dirancang untuk memberikan pengalaman bermain billiard yang terbaik bagi pemain profesional maupun amatir.</p>
+            <p>- Meja Billiard Menggunakan meja billiard dengan ukuran standar internasional, Meja terbuat dari bahan berkualitas tinggi dengan permukaan yang rata dan bantalan yang sesuai untuk pantulan bola yang akurat.
+            </br>- Peralatan Bola billiard dan stick (cue) yang digunakan harus memenuhi standar internasional dalam hal ukuran, berat, dan bahan. Bola billiard  berkualitas tinggi yang memberikan ketahanan dan performa yang optimal.
+            </br>- Pencahayaan: Pencahayaan yang memadai dan seragam di seluruh meja untuk menghindari bayangan dan memastikan pemain dapat melihat bola dengan jelas. Lampu dipasang pada ketinggian tertentu untuk memberikan pencahayaan yang ideal.
+            </br>- Lantai dan Lingkungan, Lantai terbuat dari bahan yang tahan lama dan tidak licin, seperti karpet . Suasana ruangannya nyaman, dengan ventilasi yang baik dan suhu yang terkontrol.
+            </br>- Perawatan, Meja dan peralatan billiard harus dirawat secara rutin untuk menjaga kualitas dan performanya. Ini termasuk perawatan kain meja, pengecekan dan penggantian bantalan, serta pembersihan bola dan stick.
+            </br>- Fasilitas Tambahan, dilengkapi dengan fasilitas tambahan seperti bar atau kafe, ruang tunggu yang nyaman, toilet yang bersih.
+            </br>- Aksesibilitas, Lokasinya mudah diakses dengan fasilitas parkir yang memadai dan ramah.</p>
             
             <div class="icons-container">
                 <div class="icons">
