@@ -53,6 +53,14 @@
                                 </div>
 
                                 <div class="mb-3">
+                                        <label for="promo" class="col-md-2 col-sm-3 form-label">Promo</label>
+                                        <select class="form-select" name="promo" id="promo">
+                                            <option value="0">Tidak</option>
+                                            <option value="1">Iya</option>
+                                        </select>
+                                </div>
+
+                                <div class="mb-3">
                                     <input type="submit" value="Send" class="btn btn-primary">
                                 </div>
                               </form>
