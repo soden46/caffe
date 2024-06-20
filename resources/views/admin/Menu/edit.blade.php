@@ -17,45 +17,45 @@
                                 @method('PUT')
                                 @csrf
                                 <div class="row mb-3">
-                                     <label for="title" class="col-md-2 col-sm-3 form-label">Title:</label>
+                                     <label for="judul" class="col-md-2 col-sm-3 form-label">Judu:</label>
                                      <input type="text"
-                                            id="title"
-                                            name="title"
+                                            id="judul"
+                                            name="judul"
                                             class="col form-control"
-                                            value="{{$menu->title}}"
+                                            value="{{$menu->judul}}"
                                      >
                                 </div>
                                <div class="row form-floating mb-3">
-                                    <textarea class="form-control" name="description" id="floatingTextarea">{{$menu->description}}</textarea>
-                                    <label for="floatingTextarea">Description</label>
+                                    <textarea class="form-control" name="deskripsi" id="floatingTextarea">{{$menu->deskripsi}}</textarea>
+                                    <label for="floatingTextarea">Deskripsi</label>
                                 </div>
                                 <div class="row mb-3">
-                                     <label for="price" class="col-md-2 col-sm-3 form-label">Harga </label>
+                                     <label for="harga" class="col-md-2 col-sm-3 form-label">Harga </label>
                                     <div class="input-group ">
-                                            <input type="text" class="form-control" name="pric" value="{{$menu->pric}}" id="price" aria-label="Dollar amount (with dot and two decimal places)">
+                                            <input type="text" class="form-control" name="harga" value="{{$menu->harga}}" id="harga">
                                              <span class="input-group-text">IDR</span>
                                     </div>
                                 </div>
                                 <div class="row input-group mb-3">
-                                    <label for="old_price" class="col-md-2 col-sm-3 form-label">HArga LAma</label>
+                                    <label for="harga_lama" class="col-md-2 col-sm-3 form-label">Harga Lama</label>
                                    <div class="input-group ">
-                                        <input type="text" class="form-control" name="old_price" value="{{$menu->old_price}}" id="old_price" aria-label="Dollar amount (with dot and two decimal places)">
+                                        <input type="text" class="form-control" name="harga_lama" value="{{$menu->harga_lama}}" id="harga_lama" >
                                         <span class="input-group-text">IDR</span>
                                     </div>
 
                                 </div>
                                 <div class="row input-group mb-3">
-                                    <label for="inputGroupFile02" class="col-md-2 col-sm-3 form-label">Image</label>
+                                    <label for="inputGroupFile02" class="col-md-2 col-sm-3 form-label">Foto</label>
                                     <div class="input-group ">
-                                        <input type="file" class="form-control" name="image" id="inputGroupFile02">
+                                        <input type="file" class="form-control" name="foto" id="inputGroupFile02">
                                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="cats" class="col-md-2 col-sm-3 form-label">Category</label>
-                                    <select class="form-select" name="categorie_id" aria-label="Default select example" id="cats">
+                                    <label for="id_kategori" class="col-md-2 col-sm-3 form-label">Category</label>
+                                    <select class="form-select" name="categorie_id" aria-label="Default select example" id="id_kategori">
                                         @foreach ($kategori as $cat)
-                                           <option value="{{$cat->id}}" {{$menu->id_kategori == $cat->id ? 'selected' : ''}} >{{$cat->title}}</option>
+                                           <option value="{{$cat->id}}" {{$menu->id_kategori == $cat->id ? 'selected' : ''}} >{{$cat->judul}}</option>
                                         @endforeach
                                     </select>
                                 </div>

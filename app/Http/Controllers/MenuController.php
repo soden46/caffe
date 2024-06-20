@@ -144,10 +144,11 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function edit(/*Menu $menu*/$id)
+    public function edit($id)
     {
         //
         $menu = Menu::where('id', $id)->first();
+        dd($menu);
         return view('admin.Menu.edit')->with([
             'menu' => $menu,
             "kategori" => Kategori::all(),
