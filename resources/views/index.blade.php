@@ -98,19 +98,26 @@
             <img src="{{asset('images/osaka.jpg')}}" alt="" >
         </div>
         <div class="content">
-            <h3>Best Food In The kingdom</h3>
-            <p>Our restaurant features traditional Moroccan dishes delicious and varied and offers foreign dishes, especially Italian pizzas, plumbers and a variety of drinks and we have many branches in several cities in the Kingdom and my brother's
-                branches outside the Kingdom</p>
-            <p>
-                We offer our dishes in high quality we make sure the health of
-                our customers and care for them and work in our restaurants
-                the most experienced cooks we offer many additional services
-                excellent discounts you will not find except in our restaurants,
-                advances evenings on the music of KNAWA and the historical
-                Moroccan and African music , free food delivery ,Can you also pay easily with your bank card or through your mobile phone,
-                we hope
-                to like you and visit our restaurants with your friends and family and enjoy the dishes.
-            </p>
+            <h3>Osaka Billiard Dan Cafe Yogyakarta</h3>
+            <p>Osaka Billiard Dan Cafe Yogyakarta Adalah Tempat billiard berstandar internasional memiliki sejumlah ciri dan fasilitas yang membuatnya berbeda dari tempat billiard biasa. 
+- Meja Billiard Menggunakan meja billiard dengan ukuran standar internasional, Meja terbuat dari bahan berkualitas tinggi dengan permukaan yang rata dan bantalan yang sesuai untuk pantulan bola yang akurat.
+
+- Peralatan Bola billiard dan stick (cue) yang digunakan harus memenuhi standar internasional dalam hal ukuran, berat, dan bahan. Bola billiard  berkualitas tinggi yang memberikan ketahanan dan performa yang optimal.
+
+- Pencahayaan: Pencahayaan yang memadai dan seragam di seluruh meja untuk menghindari bayangan dan memastikan pemain dapat melihat bola dengan jelas. Lampu dipasang pada ketinggian tertentu untuk memberikan pencahayaan yang ideal.
+
+- Lantai dan Lingkungan, Lantai terbuat dari bahan yang tahan lama dan tidak licin, seperti karpet . Suasana ruangannya nyaman, dengan ventilasi yang baik dan suhu yang terkontrol.
+
+- Perawatan, Meja dan peralatan billiard harus dirawat secara rutin untuk menjaga kualitas dan performanya. Ini termasuk perawatan kain meja, pengecekan dan penggantian bantalan, serta pembersihan bola dan stick.
+
+- Fasilitas Tambahan, dilengkapi dengan fasilitas tambahan seperti bar atau kafe, ruang tunggu yang nyaman, toilet yang bersih.
+
+- Aksesibilitas, Lokasinya mudah diakses dengan fasilitas parkir yang memadai dan ramah.
+
+- Keamanan dan Kebersihan, Mengutamakan keamanan dan kebersihan dengan menyediakan loker untuk barang pribadi, pengawasan keamanan, dan pembersihan rutin.
+
+- Tempat billiard berstandar internasional ini dirancang untuk memberikan pengalaman bermain billiard yang terbaik bagi pemain profesional maupun amatir.</p>
+            
             <div class="icons-container">
                 <div class="icons">
                     <i class="fas fa-shipping-fast"></i>
@@ -122,7 +129,7 @@
                 </div>
                 <div class="icons">
                     <i class="fas fa-headset"></i>
-                    <span>pelayanan 24/7</span>
+                    <span>Reservasi</span>
                 </div>
             </div>
         </div>
@@ -203,17 +210,10 @@
                 <p>
                     {{$review->comment}}
                 </p>
-
             </div>
-
             @endif
 
-
             @endforeach
-
-
-
-
         </div>
     </div>
 </section>
