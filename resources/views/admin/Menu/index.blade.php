@@ -116,7 +116,7 @@
 
                                                                     Swal.fire({
                                                                     title: 'Apakah Anda yakin?',
-                                                                    text: 'Apakah Anda ingin menghapus kategori {{$menu->title}}',
+                                                                    text: 'Apakah Anda ingin menghapus kategori {{$menu->judul}}',
                                                                     icon: 'warning',
                                                                     showCancelButton: true,
                                                                     confirmButtonColor: '#3085d6',
@@ -136,7 +136,7 @@
                                                         <i class="fa fa-trash"></i>
                                                     </button>
                                                 </form>
-                                                @if ($menu->promo === 0)
+                                                @if ($menu->promo === '0')
                                                 <form action="{{route("menu.promo",$menu->id)}}" method="post" style="margin-left: 4px !important">
                                                     @csrf
                                                     @method('PUT')
@@ -148,7 +148,7 @@
                                                 <form action="{{route("menu.NONpromo",$menu->id)}}" method="post" style="margin-left: 4px !important">
                                                     @csrf
                                                     @method('PUT')
-                                                    <button class="btn btn-secondary btn-sm" type="submit" title="This Menu is no longer POPULAR">
+                                                    <button class="btn btn-secondary btn-sm" type="submit" title="Menu ini buka menu Promo">
                                                         <i class="fa-solid fa-dumpster-fire  text-white"></i>
                                                     </button>
                                                 </form>
