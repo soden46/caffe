@@ -148,7 +148,7 @@ class MenuController extends Controller
     {
         //
         $menu = Menu::where('id', $id)->first();
-        dd($menu);
+        // dd($menu);
         return view('admin.Menu.edit')->with([
             'menu' => $menu,
             "kategori" => Kategori::all(),
