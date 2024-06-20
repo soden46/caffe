@@ -34,9 +34,8 @@
 
         <nav class="navbar">
             <a href="/" class="active">home</a>
-            <a href="/#dishes" >dishes</a>
-            <a href="/#about" >about</a>
             <a href="/#menu">menu</a>
+            <a href="/#about" >about</a>
         </nav>
           @if (Auth()->guard()->check())
           {{-- Dakchi li4aytl3 ila kan user mconnecte --}}
