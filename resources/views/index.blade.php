@@ -77,16 +77,16 @@
                 @csrf
                 @if (auth()->user())
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
-                <input type="hidden" name="menu_id" value="{{$menuPromo->id}}">
+                <input type="hidden" name="menu_id" value="{{$menupromo->id}}">
                 @endif
                 <button type="submit"> <i class="fas fa-heart"></i></button>
                 {{--<a href="#" class="fas fa-eye"></a>--}}
             </form>
-            <img src="{{asset('images/menu/'.$menuPromo->foto)}}" alt="">
-            <h3>{{$menuPromo->judul}}</h3>
+            <img src="{{asset('images/menu/'.$menupromo->foto)}}" alt="">
+            <h3>{{$menupromo->judul}}</h3>
 
-            <span>RP {{$menuPromo->harga}}</span>
-            <form action="{{route('cart.add',$menuPromo->id)}}" method="POST">
+            <span>RP {{$menupromo->harga}}</span>
+            <form action="{{route('cart.add',$menupromo->id)}}" method="POST">
 
                 <input type="hidden" name="quantity" value="1">
                 @csrf
@@ -145,7 +145,7 @@
 
 <section class="menu" id="menu">
     <h3 class="sub-heading">Daftar Menu</h3>
-    <h1 class="heading">Spesial Untuk Hari ini</h1>
+    <h1 class="heading">Menu Kami</h1>
     <div class="box-container">
         @foreach ($menu as $menu)
         <div class="box">
