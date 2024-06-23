@@ -64,7 +64,7 @@
                                     <div class="form-group">
                                         <a href="{{ route('make.payment') }}" class="btn-paypal mt-3 ml-2 d-flex align-items-center">
                                             <i class="fab fa-cc-paypal mr-1" style="font-size: 1.7rem"></i>
-                                            PAY Rp. {{ number_format(Cart::getSubTotal(), 2) }} WITH PAYPAL
+                                            Bayar Rp. {{ number_format(Cart::getSubTotal(), 2) }}
                                         </a>
                                     </div>
                                 </div>

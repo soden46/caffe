@@ -10,17 +10,17 @@
                 <th>total</th>
             </tr>
 
-                @foreach ($MenuJadors as $item)
+                @foreach ($MenuPilihan as $item)
                      <tr>
                         <td>
                             <div class="cart-info">
-                                <img src="{{asset('images/menu/'.$item->Menu->image)}}" alt="">
+                                <img src="{{asset('images/menu/'.$item->Menu->foto)}}" alt="">
                                 <div>
-                                    <h3>{{$item->Menu->title}}</h3>
-                                    <small>{{$item->Menu->description}}</small>
+                                    <h3>{{$item->Menu->judul}}</h3>
+                                    <small>{{$item->Menu->deskripsi}}</small>
                                     </br>
                                         {{-- remove menu from cart form --}}
-                                        <form action="{{route('Jador.destroy',$item->id)}}"
+                                        <form action="{{route('pilihan.destroy',$item->id)}}"
                                                     method="POST"
                                                     id="removeItemform">
                                             @csrf
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="price">Price : {{$item->Menu->pric}} IDR</td>
+                        <td class="price">Harga : Rp. {{$item->Menu->harga}}</td>
 
 
                     </tr>

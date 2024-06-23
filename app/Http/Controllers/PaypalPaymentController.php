@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use App\Models\Order;
-use Darryldecode\Cart\Cart;
+use App\Models\Transaksi;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\ExpressCheckout;
@@ -27,7 +28,7 @@ class PaypalPaymentController extends Controller
         $data['items'] = [];
 
         // add cart items in $data[items] array
-        foreach (\Cart::session($userId)->getContent() as $item) {
+        foreach (Cart::session($userId)->getContent() as $item) {
             array_push($data['items'], [
                 'name' => $item->name,
                 'price' => (int)($item->price / 9),
@@ -68,8 +69,8 @@ class PaypalPaymentController extends Controller
         $paypalModule = new ExpressCheckout;
         $reponse = $paypalModule->getExpressCheckoutDetails($request->token);
         if (in_array(strtoupper($reponse["ACK"]), ["SUCCESS", "SUCCESSWITHWARNING"])) {
-            foreach (\Cart::session($userId)->getContent() as $item) {
-                Order::create([
+            foreach (Cart::session($userId)->getContent() as $item) {
+                Transaksi::create([
                     "user_id" => auth()->user()->id,
                     "menu_name" => $item->name,
                     "qte" => $item->quantity,

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorejadorMenuRequest;
-use App\Http\Requests\UpdatejadorMenuRequest;
+use App\Http\Requests\StoremenuPilihanRequest;
+use App\Http\Requests\UpdatemenuPilihanRequest;
 use App\Models\MenuPilihan;
 
 class MenuPilihanController extends Controller
@@ -16,8 +16,8 @@ class MenuPilihanController extends Controller
     public function index()
     {
         //
-        return view('JadorMenu.index')->with([
-            'MenuJadors' => MenuPilihan::where('user_id', auth()->user()->id)->get(),
+        return view('MenuPilihan.index')->with([
+            'MenuPilihan' => MenuPilihan::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
@@ -34,10 +34,10 @@ class MenuPilihanController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorejadorMenuRequest  $request
+     * @param  \App\Http\Requests\StoremenuPilihanRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorejadorMenuRequest $request)
+    public function store(StoremenuPilihanRequest $request)
     {
 
 
@@ -50,16 +50,16 @@ class MenuPilihanController extends Controller
             'id_menu' => $request->id_menu,
 
         ]);
-        return redirect()->route('resto.index')->with(['success' => 'The Menu has been added to favourites ']);
+        return redirect()->route('resto.index')->with(['success' => 'Menu Berhasil ditambahkan ke Pilihan Favorit']);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\jadorMenu  $jadorMenu
+     * @param  \App\Models\menuPilihan  $menuPilihan
      * @return \Illuminate\Http\Response
      */
-    public function show(jadorMenu $jadorMenu)
+    public function show(menuPilihan $menuPilihan)
     {
         //
     }
@@ -67,10 +67,10 @@ class MenuPilihanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\jadorMenu  $jadorMenu
+     * @param  \App\Models\menuPilihan  $menuPilihan
      * @return \Illuminate\Http\Response
      */
-    public function edit(jadorMenu $jadorMenu)
+    public function edit(menuPilihan $menuPilihan)
     {
         //
     }
@@ -78,11 +78,11 @@ class MenuPilihanController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatejadorMenuRequest  $request
-     * @param  \App\Models\jadorMenu  $jadorMenu
+     * @param  \App\Http\Requests\UpdatemenuPilihanRequest  $request
+     * @param  \App\Models\menuPilihan  $menuPilihan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatejadorMenuRequest $request, jadorMenu $jadorMenu)
+    public function update(UpdatemenuPilihanRequest $request, menuPilihan $menuPilihan)
     {
         //
     }
@@ -90,14 +90,14 @@ class MenuPilihanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\jadorMenu  $jadorMenu
+     * @param  \App\Models\menuPilihan  $menuPilihan
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $jadorMenu = jadorMenu::findOrFail($id);
-        $jadorMenu->delete();
-        return redirect()->route('Jador.index')->with(['success' => 'The Menu has been deleted from favourites']);
+        $menuPilihan = menuPilihan::findOrFail($id);
+        $menuPilihan->delete();
+        return redirect()->route('pilihan.index')->with(['success' => 'Menu Berhasil dihapus ke Pilihan Favorit']);
     }
 }
