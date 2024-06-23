@@ -13,7 +13,7 @@ class CartController extends Controller
         $userId = auth()->user()->id;
         $cartContent = Cart::session($userId)->getContent();
 
-        return view('cart.index')->with([
+        return view('Cart.index')->with([
             'items' => $cartContent,
             'itemsCount' => $cartContent->count(), // qte
         ]);
