@@ -12,8 +12,8 @@ return [
     |
     */
 
-    'server_key' => env('MIDTRANS_SERVER_KEY', 'SB-Mid-server-1HMeIr8IgjFkPClz-aKXeVur'),
-    'client_key' => env('MIDTRANS_CLIENT_KEY', 'SB-Mid-client-n3d5lXOZEJcCec-C'),
+    'server_key' => env('MIDTRANS_SERVER_KEY', 'SB-Mid-server-W4vZ6of3o4uUSbaHY_GUyiMt'),
+    'client_key' => env('MIDTRANS_CLIENT_KEY', 'SB-Mid-client-0l2t3ENJzYewBJC0'),
     'is_production' => env('MIDTRANS_IS_PRODUCTION', false),
     'is_sanitized' => env('MIDTRANS_IS_SANITIZED', true),
     'is_3ds' => env('MIDTRANS_IS_3DS', true),
