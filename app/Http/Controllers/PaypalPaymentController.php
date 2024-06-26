@@ -80,7 +80,7 @@ class PaypalPaymentController extends Controller
                     'deliverde' => 0,
 
                 ]);
-                \Cart::session($userId)->Clear();
+                Cart::session($userId)->Clear();
             }
             return redirect()->route('resto.index')->with([
                 'success' => 'Payment has been made successfully.'

@@ -12,6 +12,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\JadorMenuController;
 use App\Http\Controllers\MenuPilihanController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaypalPaymentController;
 
 /*
@@ -110,10 +111,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('update/{item}/cart', [CartController::class, 'updateItemInCart'])->name('cart.update');
     Route::delete('remove/{item}/cart', [CartController::class, 'removeItemFromCart'])->name('cart.remove');
 
-    //Payment with Paypal Routes
-    Route::get("/handel-payment", [PaypalPaymentController::class, "handelPayment"])->name("make.payment");
-    Route::get("/Cancel-payment", [PaypalPaymentController::class, "CancelPayment"])->name("cancel.payment");
-    Route::get("/Payment-success", [PaypalPaymentController::class, "SuccessPayment"])->name("success.payment");
+    //Payment with midtrans Routes
+    Route::get('/handel-payment', [PaymentController::class, 'handelPayment'])->name('make.payment');
+    Route::get('/Cancel-payment', [PaymentController::class, 'CancelPayment'])->name('cancel.payment');
+    Route::get('/Payment-success', [PaymentController::class, 'SuccessPayment'])->name('success.payment');
+    Route::post('/payment/notification', [PaymentController::class, 'handleNotification'])->name('payment.notification');
 
 
 

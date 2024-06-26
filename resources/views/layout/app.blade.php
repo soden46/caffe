@@ -133,5 +133,8 @@
      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
      {{-- Sweetalert script cdn --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{-- Midtrans --}}
+    
 </body>
 </html>

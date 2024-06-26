@@ -180,6 +180,7 @@ return [
         Darryldecode\Cart\CartServiceProvider::class, // cart provider
         Srmklive\PayPal\Providers\PayPalServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class, // Excel provider
+        App\Providers\MidtransServiceProvider::class, // Midtrans
 
 
     ],

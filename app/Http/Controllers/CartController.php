@@ -38,7 +38,7 @@ class CartController extends Controller
             "associatedModel" => $menu,
         ));
 
-        return redirect()->route('Cart.index');
+        return redirect()->route('cart.index');
     }
 
     // update item in cart function
@@ -53,7 +53,7 @@ class CartController extends Controller
             ),
         ));
 
-        return redirect()->route('Cart.index');
+        return redirect()->route('cart.index');
     }
 
     // remove item from cart function
@@ -63,6 +63,6 @@ class CartController extends Controller
 
         Cart::session($userId)->remove($id);
 
-        return redirect()->route('Cart.index');
+        return redirect()->route('cart.index');
     }
 }
