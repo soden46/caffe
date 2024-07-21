@@ -13,11 +13,13 @@ class Transaksi extends Model
     protected $fillable = [
         'id_user',
         'nama_menu',
+        'qty',
         'jumlah',
         'harga',
         'total',
         'dibayar',
         'diantar',
+        'bukti_pembayaran',
     ];
     public function Menu()
     {
@@ -25,6 +27,6 @@ class Transaksi extends Model
     }
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(user::class, 'id_user', 'id');
     }
 }

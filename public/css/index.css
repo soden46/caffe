@@ -185,7 +185,13 @@ header .icons #menu-bars {
     text-align: center;
     color: var(--green2);
     font-size: 2rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+}
+.sub-heading-2 {
+    text-align: start;
+    color: black;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
 }
 .heading {
     text-align: center;
@@ -448,7 +454,6 @@ header .icons #menu-bars {
 .review2 form .inputBox {
     display: flex;
     flex-wrap: wrap;
-
 }
 .review2 form .inputBox .input {
     width: 100%;
@@ -621,7 +626,6 @@ th:last-child {
 }
 /*responsive cart style  */
 @media only screen and (max-width: 600px) {
-
 }
 
 /*********** responsive style *********************/
@@ -662,20 +666,10 @@ th:last-child {
         background: #fff;
         border-top: 0.1rem solid rgba(0, 0, 0, 2);
         padding: 1rem;
-        clip-path: polygon(
-            0 0,
-            100% 0,
-            100% 0,
-            0 0
-        );
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
     header .navbar.active {
-        clip-path: polygon(
-            0 0,
-            100% 0,
-            100% 100%,
-            0% 100%
-        );
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
     header .navbar a {
         display: block;

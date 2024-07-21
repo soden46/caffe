@@ -26,7 +26,7 @@ class OrderController extends Controller
         //
         if (!empty($request->search)) {
             return view('admin.orders.index')->with([
-                'orders' => Transaksi::where('id', 'like', "%{$request->search}%")
+                'orders' => Transaksi::with('user')->where('id', 'like', "%{$request->search}%")
                     ->orWhere('menu_name', 'like', "%{$request->search}%")
                     ->orWhere('price', 'like', "%{$request->search}%")
                     ->orWhere('total', 'like', "%{$request->search}%")
@@ -38,7 +38,7 @@ class OrderController extends Controller
             ]);
         } else {
             return view('admin.orders.index')->with([
-                'orders' => Transaksi::latest()->paginate(6),
+                'orders' => Transaksi::with('user')->latest()->paginate(6),
                 'usersCount' => User::where('admin', 0)->count(),
                 'sales' => Transaksi::where('dibayar', 1)->count(),
                 'ArchivedOrders' => Transaksi::whereNotNull('deleted_at')->withTrashed()->count(),
@@ -111,7 +111,7 @@ class OrderController extends Controller
         //
         $order = Transaksi::findOrFail($id);
         $order->update([
-            'deliverde' => 1,
+            'diantar' => 1,
         ]);
         return redirect()->route('orders.index')->with(['success' => 'Delevired Status change Successfully']);
     }

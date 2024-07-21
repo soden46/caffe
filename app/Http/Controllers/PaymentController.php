@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Order;
 use App\Models\Transaksi;
+use App\Models\User;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Http\Request;
 use Midtrans\Snap;
@@ -35,29 +36,47 @@ class PaymentController extends Controller
             ]);
         }
 
-        $orderId = uniqid();
-        $total = Cart::session($userId)->getTotal();
+        $total = Cart::session($userId)->getContent();
+        $invoiceId = 'INV-' . uniqid();
+        $invoiceDate = now();
+        $user = User::find($userId);
 
-        $params = [
-            'transaction_details' => [
-                'order_id' => $orderId,
-                'gross_amount' => $total,
-            ],
-            'item_details' => $items,
-            'customer_details' => [
-                'first_name' => auth()->user()->nama,
-                'email' => auth()->user()->email,
-            ],
-        ];
-        $snapToken = Snap::getSnapToken($params);
-
-        return view('payment.checkout', compact('snapToken'));
+        return view('payment.checkout', compact('items', 'total', 'user', 'invoiceId', 'invoiceDate'));
     }
 
-    public function CancelPayment()
+    public function confirm(Request $request)
     {
-        return redirect()->route('cart.index')->with([
-            'info' => "You have declined the payment.",
+        // Validasi data yang diterima
+        $request->validate([
+            'id_user' => 'required', // Pastikan id_user ada di tabel users
+            'nama_menu' => 'required',
+            'qty' => 'required',
+            'harga' => 'required',
+            'total' => 'required',
+            'dibayar' => 'required',
+            'bukti_pembayaran' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // Menangani upload file bukti pembayaran
+        if ($request->hasFile('bukti_pembayaran')) {
+            $file = $request->file('bukti_pembayaran');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads'), $filename);
+        }
+
+        // Membuat data transaksi
+        Transaksi::create([
+            'id_user' => $request->id_user,
+            'nama_menu' => $request->nama_menu, // Sesuaikan dengan nama field di form
+            'qty' => $request->qty,
+            'harga' => $request->harga,
+            'total' => $request->total,
+            'dibayar' => $request->dibayar,
+            'bukti_pembayaran' => $filename, // Menyimpan nama file bukti pembayaran jika ada
+        ]);
+
+        return redirect()->route('resto.index')->with([
+            'success' => 'Anda sukses melakukan pembayaran, pesanan sedang dikonfirmasi Admin.'
         ]);
     }
 

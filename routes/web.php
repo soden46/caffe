@@ -53,6 +53,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/orders', OrderController::class);
     // search order route
     Route::post('/orders', [OrderController::class, 'index'])->name('orders.search');
+    // Update Order
+    Route::post('/orders', [OrderController::class, 'update'])->name('orders.search');
     // get archived prdedr route
     Route::get('ArchiveOrders', [OrderController::class, 'getArchive'])->name('orders.archive');
     Route::put('Unarchive/{id}/order', [OrderController::class, 'unarchive'])->name('order.unarchive');
@@ -113,11 +115,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Payment with midtrans Routes
     Route::get('/handel-payment', [PaymentController::class, 'handelPayment'])->name('make.payment');
-    Route::get('/Cancel-payment', [PaymentController::class, 'CancelPayment'])->name('cancel.payment');
-    Route::get('/Payment-success', [PaymentController::class, 'SuccessPayment'])->name('success.payment');
-    Route::post('/payment/notification', [PaymentController::class, 'handleNotification'])->name('payment.notification');
-
-
+    Route::post('/konfirmasi-pembayaran', [PaymentController::class, 'confirm'])->name('transaksi.uploadBukti');
 
     /***************** EXCEL ROUTE *************************/
     /**** USER EXCEL ROUTE ****/

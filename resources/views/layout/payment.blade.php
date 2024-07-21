@@ -135,31 +135,7 @@
     {{-- Sweetalert script cdn --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    {{-- Midtrans --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}">
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var payButton = document.getElementById('pay-button');
-            payButton.addEventListener('click', function() {
-                snap.pay('{{ $snapToken }}', {
-                    onSuccess: function(result) {
-                        window.location.href = "{{ route('success.payment') }}";
-                    },
-                    onPending: function(result) {
-                        console.log('Pending:', result);
-                    },
-                    onError: function(result) {
-                        window.location.href = "{{ route('cancel.payment') }}";
-                    },
-                    onClose: function() {
-                        alert('Payment popup closed without finishing the payment');
-                    }
-                });
-            });
-        });
-    </script>
+
 </body>
 
 </html>

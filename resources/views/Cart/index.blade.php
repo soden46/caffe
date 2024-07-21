@@ -23,7 +23,7 @@
                                     <br>
                                     <form action="{{ route('cart.remove', $item->id) }}" method="POST" id="removeItemForm">
                                         @csrf
-                                        @method("DELETE")
+                                        @method('DELETE')
                                         <button class="removeBtn" type="submit">Remove</button>
                                     </form>
                                 </div>
@@ -33,13 +33,8 @@
                             <form action="{{ route('cart.update', $item->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <input type="number"
-                                       name="quantity"
-                                       id="quantity"
-                                       value="{{ $item->quantity }}"
-                                       min="1"
-                                       max="{{ $item->attributes->quantity }}"
-                                       class="form-control">
+                                <input type="number" name="quantity" id="quantity" value="{{ $item->quantity }}"
+                                    min="1" max="{{ $item->attributes->quantity }}" class="form-control">
                                 <button type="submit" class="btn btn-sm btn-warning mt-2">
                                     <i class="fas fa-edit"></i> Update
                                 </button>
@@ -62,7 +57,8 @@
                             @if (Cart::getSubTotal() > 0)
                                 <div class="row">
                                     <div class="form-group">
-                                        <a href="{{ route('make.payment') }}" class="btn-paypal mt-3 ml-2 d-flex align-items-center">
+                                        <a href="{{ route('make.payment') }}"
+                                            class="btn mt-3 ml-2 d-flex align-items-center">
                                             <i class="fab fa-cc-paypal mr-1" style="font-size: 1.7rem"></i>
                                             Bayar Rp. {{ number_format(Cart::getSubTotal(), 2) }}
                                         </a>
@@ -74,6 +70,6 @@
                 </table>
             </div>
         @endif
-        </div>
+    </div>
     </div>
 @endsection
