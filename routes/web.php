@@ -113,7 +113,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('update/{item}/cart', [CartController::class, 'updateItemInCart'])->name('cart.update');
     Route::delete('remove/{item}/cart', [CartController::class, 'removeItemFromCart'])->name('cart.remove');
 
-    //Payment with midtrans Routes
+    //Payment  Routes
     Route::get('/handel-payment', [PaymentController::class, 'handelPayment'])->name('make.payment');
     Route::post('/konfirmasi-pembayaran', [PaymentController::class, 'confirm'])->name('transaksi.uploadBukti');
 

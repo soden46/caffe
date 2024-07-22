@@ -8,19 +8,9 @@ use App\Models\Transaksi;
 use App\Models\User;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Http\Request;
-use Midtrans\Snap;
-use Midtrans\Config;
 
 class PaymentController extends Controller
 {
-    public function __construct()
-    {
-        Config::$serverKey = config('midtrans.server_key');
-        Config::$isProduction = config('midtrans.is_production');
-        Config::$isSanitized = true;
-        Config::$is3ds = true;
-    }
-
     public function handelPayment()
     {
         $userId = auth()->user()->id;
@@ -99,35 +89,5 @@ class PaymentController extends Controller
         return redirect()->route('resto.index')->with([
             'success' => 'Payment has been made successfully.'
         ]);
-    }
-
-    public function handleNotification(Request $request)
-    {
-        $notification = new \Midtrans\Notification();
-
-        $transaction = $notification->transaction_status;
-        $type = $notification->payment_type;
-        $orderId = $notification->order_id;
-        $fraud = $notification->fraud_status;
-
-        if ($transaction == 'capture') {
-            if ($type == 'credit_card') {
-                if ($fraud == 'challenge') {
-                    // Transaction is challenged
-                } else {
-                    // Transaction is success
-                }
-            }
-        } else if ($transaction == 'settlement') {
-            // Transaction is success
-        } else if ($transaction == 'pending') {
-            // Transaction is pending
-        } else if ($transaction == 'deny') {
-            // Transaction is denied
-        } else if ($transaction == 'expire') {
-            // Transaction is expired
-        } else if ($transaction == 'cancel') {
-            // Transaction is canceled
-        }
     }
 }
