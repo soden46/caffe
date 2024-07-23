@@ -180,6 +180,7 @@ return [
         Darryldecode\Cart\CartServiceProvider::class, // cart provider
         Srmklive\PayPal\Providers\PayPalServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class, // Excel provider
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
     ],
@@ -200,6 +201,7 @@ return [
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class, // cart class
         'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class, // Excel class alias
+        'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
 
 
         // ...

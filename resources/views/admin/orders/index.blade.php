@@ -94,7 +94,15 @@
                                                         @endif
                                                     </td>
                                                     <td class="d-flex flex-row justify-content-center align-items-center">
-                                                        <!-- Action Buttons Here -->
+                                                        <!-- Print Button -->
+                                                        <a href="{{ route('orders.print', $order->id) }}"
+                                                            class="btn btn-primary btn-sm mx-1">Cetak</a>
+                                                        <!-- Confirm Button -->
+                                                        <a href="{{ route('orders.confirm', $order->id) }}"
+                                                            class="btn btn-success btn-sm mx-1">Konfirmasi</a>
+                                                        <!-- Invoice Button -->
+                                                        <a href="{{ route('orders.invoice', $order->id) }}"
+                                                            class="btn btn-info btn-sm mx-1">Invoice</a>
                                                     </td>
                                                 </tr>
 

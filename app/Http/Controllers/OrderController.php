@@ -8,6 +8,7 @@ use App\Models\Comment;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Transaksi;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -135,5 +136,53 @@ class OrderController extends Controller
         $order = Transaksi::findOrFail($id);
         $order->delete();
         return redirect()->route('orders.index')->with(['success' => 'Orderd Deleted']);
+    }
+
+    public function print($id)
+    {
+        $order = Transaksi::findOrFail($id);
+
+        // Data untuk view
+        $data = [
+            'title' => 'Invoice',
+            'order' => $order,
+        ];
+
+        // Pengaturan kertas khusus
+        $customPaper = [0, 0, 567.00, 500.80];
+
+        // Generate PDF for printing
+        $pdf = PDF::loadView('admin.orders.print', $data)
+            ->setPaper($customPaper, 'portrait');
+        return $pdf->stream('invoice__' . $order->id . '.pdf');
+    }
+
+    public function confirm($id)
+    {
+        $order = Transaksi::findOrFail($id);
+        $order->update(['status' => 'confirmed']); // Update status or any confirmation logic
+        return redirect()->route('orders.index')->with('success', 'Order confirmed successfully!');
+    }
+
+    public function invoice($id)
+    {
+        // Ambil data transaksi
+        $order = Transaksi::findOrFail($id);
+
+        // Data untuk view
+        $data = [
+            'title' => 'Invoice',
+            'order' => $order,
+        ];
+
+        // Pengaturan kertas khusus
+        $customPaper = [0, 0, 567.00, 500.80];
+
+        // Generate PDF dengan view dan pengaturan kertas
+        $pdf = PDF::loadView('admin.orders.invoice', $data)
+            ->setPaper($customPaper, 'portrait');
+
+        // Unduh file PDF
+        return $pdf->download('invoice_' . $order->id . '.pdf');
     }
 }

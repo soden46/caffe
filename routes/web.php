@@ -58,6 +58,13 @@ Route::group(['middleware' => 'auth'], function () {
     // get archived prdedr route
     Route::get('ArchiveOrders', [OrderController::class, 'getArchive'])->name('orders.archive');
     Route::put('Unarchive/{id}/order', [OrderController::class, 'unarchive'])->name('order.unarchive');
+    // Print Order
+    Route::get('orders/{id}/print', [OrderController::class, 'print'])->name('orders.print');
+    // Confirm Order
+    Route::get('orders/{id}/confirm', [OrderController::class, 'confirm'])->name('orders.confirm');
+    // Invoice Order
+    Route::get('orders/{id}/invoice', [OrderController::class, 'invoice'])->name('orders.invoice');
+
 
 
     /************* menu routes ********************/
@@ -116,6 +123,11 @@ Route::group(['middleware' => 'auth'], function () {
     //Payment  Routes
     Route::get('/handel-payment', [PaymentController::class, 'handelPayment'])->name('make.payment');
     Route::post('/konfirmasi-pembayaran', [PaymentController::class, 'confirm'])->name('transaksi.uploadBukti');
+    Route::get('/invoice', [PaymentController::class, 'invoice'])->name('transaksi.invoice');
+    // Route untuk halaman daftar transaksi pengguna
+    Route::get('user/transactions', [PaymentController::class, 'showTransactions'])->name('user.transactions');
+    // Route untuk menampilkan invoice berdasarkan ID
+    Route::get('transaksi/invoice/{id}', [PaymentController::class, 'Invoice'])->name('user.invoice');
 
     /***************** EXCEL ROUTE *************************/
     /**** USER EXCEL ROUTE ****/

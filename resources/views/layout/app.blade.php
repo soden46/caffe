@@ -38,6 +38,9 @@
             <a href="/#dishes">promo</a>
             <a href="/#about">about</a>
             <a href="/#menu">menu</a>
+            @if (Auth()->guard()->check())
+                <a href="{{ route('user.transactions') }}">transaksi</a>
+            @endif
         </nav>
         @if (Auth()->guard()->check())
             {{-- Dakchi li4aytl3 ila kan user mconnecte --}}

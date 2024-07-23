@@ -8,6 +8,7 @@ use App\Models\Transaksi;
 use App\Models\User;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PaymentController extends Controller
 {
@@ -65,9 +66,7 @@ class PaymentController extends Controller
             'bukti_pembayaran' => $filename, // Menyimpan nama file bukti pembayaran jika ada
         ]);
 
-        return redirect()->route('resto.index')->with([
-            'success' => 'Anda sukses melakukan pembayaran, pesanan sedang dikonfirmasi Admin.'
-        ]);
+        return redirect()->route('user.transactions')->with('success', 'Bukti pembayaran berhasil diunggah.');
     }
 
     public function SuccessPayment(Request $request)
@@ -89,5 +88,34 @@ class PaymentController extends Controller
         return redirect()->route('resto.index')->with([
             'success' => 'Payment has been made successfully.'
         ]);
+    }
+
+    public function showTransactions()
+    {
+        $transactions = Transaksi::where('id_user', auth()->id())->get();
+
+        return view('transactions.index', compact('transactions'));
+    }
+
+    public function invoice($id)
+    {
+        // Ambil data transaksi
+        $order = Transaksi::findOrFail($id);
+
+        // Data untuk view
+        $data = [
+            'title' => 'Invoice',
+            'order' => $order,
+        ];
+
+        // Pengaturan kertas khusus
+        $customPaper = [0, 0, 567.00, 500.80];
+
+        // Generate PDF dengan view dan pengaturan kertas
+        $pdf = PDF::loadView('transactions.invoice', $data)
+            ->setPaper($customPaper, 'portrait');
+
+        // Unduh file PDF
+        return $pdf->download('invoice_' . $order->id . '.pdf');
     }
 }
