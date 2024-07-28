@@ -13,7 +13,7 @@
                         <span>Menu Paket Kami</span>
                         <h3>Paket Siang A</h3>
                         <p>2 Jam + 1 Softdrink Rp. 40.000</p>
-                        <a href="#" class="btn">order now</a>
+                        <a href="menu" class="btn">order now</a>
                     </div>
                     <div class="image">
                         <img src="{{ asset('images/osaka.jpg') }}" alt="">
@@ -25,7 +25,7 @@
                         <span>Menu Paket Kami</span>
                         <h3>Paket Siang B</h3>
                         <p>3 Jam + 2 Softdrink Rp. 60.000</p>
-                        <a href="#" class="btn">order now</a>
+                        <a href="menu" class="btn">order now</a>
                     </div>
                     <div class="image">
                         <img src="{{ asset('images/osaka.jpg') }}" alt="">
@@ -37,7 +37,7 @@
                         <span>Menu Paket Kami</span>
                         <h3>Paket Malam A</h3>
                         <p>2 Jam + 1 Softdrink Rp. 65.000</p>
-                        <a href="#" class="btn">order now</a>
+                        <a href="menu" class="btn">order now</a>
                     </div>
                     <div class="image">
                         <img src="{{ asset('images/osaka.jpg') }}" alt="">
@@ -49,7 +49,7 @@
                         <span>Menu Paket Kami</span>
                         <h3>Paket Malam B</h3>
                         <p>3 Jam + 2 Softdrink Rp. 95.000</p>
-                        <a href="#" class="btn">order now</a>
+                        <a href="menu" class="btn">order now</a>
                     </div>
                     <div class="image">
                         <img src="{{ asset('images/osaka.jpg') }}" alt="">
