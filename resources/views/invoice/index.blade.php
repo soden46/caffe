@@ -114,7 +114,7 @@
         </table>
 
         <div class="thank-you">
-            <p>Thank you for your order at our cafe!</p>
+            <p>Thank you for your order at Osaka Billiard</p>
         </div>
     </div>
 </body>
